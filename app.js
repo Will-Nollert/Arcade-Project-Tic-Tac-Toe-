@@ -1,7 +1,7 @@
-//create 9 squares 
-const firstSquare = document.createElement('div')
 
-firstSquare.innerText = 'hi i am first square'
+const board = new Array(9).fill(null).map((val, idx) => {
+    return `<div class = "square">${idx + 1 }</div>`
+});
 
-const app = document.getElementById("app") 
-app.appendChild(firstSquare)
+const app =  document.getElementById("app")
+app.innerHTML = board.join("")
