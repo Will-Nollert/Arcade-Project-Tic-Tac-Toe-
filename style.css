@@ -2,12 +2,27 @@
     box-sizing: border-box;
 }
 
+body{
+    color: #545454;
+    font-family: sans-serif;
+}
+
+#container {
+    background: #14bdac;
+    margin: 50px;
+    padding: 50px;
+    border-radius: 25px;
+    width: 500px;
+    height: 500px;
+}
+
 #app {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     width: 300px;
     margin: auto;
+    cursor: pointer;
 }
 
 .square {
@@ -17,7 +32,7 @@
     width: 100px;
     height: 100px;
     padding: 1em;
-    border: 1px solid black;
+    border: 2.5px solid #545454;
     text-align: center;
 }
 
@@ -25,10 +40,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: .5em;
 }
 
 #gameMsg {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: .5em;
+
 }
