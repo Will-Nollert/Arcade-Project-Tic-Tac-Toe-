@@ -16,6 +16,7 @@ app.innerHTML = board.join("")
 
 const boardSquares = Array.from(document.querySelectorAll(".square"))
 
+
 boardSquares.forEach((node, idx) => {
     if (idx % 3 === 0){
         node.classList.add("column1");
@@ -45,8 +46,22 @@ boardSquares.forEach(node => {
         turn ++;
 
         didWin();
+
+        const playerTurn = document.getElementById('playerTurn')
+        playerTurn.innerText = "click a square the start the game"
+        if(turn % 2 === 0){
+            playerTurn.innerText = "Xs move"
+        } else {
+            playerTurn.innerText = "Os move"
+        }
     })
+    
 });
+
+
+
+
+
 
 function didWin(){
 
@@ -105,7 +120,7 @@ function didWin(){
 
      won = allX(combination) || allO(combination)
 
-     console.log(won)
+     //console.log(won)
 
 
      const gameMsg = document.getElementById('gameMsg')

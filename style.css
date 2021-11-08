@@ -7,6 +7,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     width: 300px;
+    margin: auto;
 }
 
 .square {
@@ -18,4 +19,16 @@
     padding: 1em;
     border: 1px solid black;
     text-align: center;
+}
+
+#playerTurn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#gameMsg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
