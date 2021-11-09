@@ -1,10 +1,3 @@
-/**when running console log I should get "false" "true" then "my Msg" but the first cell that 
- * gets returend to me is "my Msg" so I think I messed up the cell idiing or somting like that
- * at around 41 min in the youtube video but for some reason the conolse logs are nott the same
- */
-
-
-
 let turn = 0
 
 const board = new Array(9).fill(null).map((val, idx) => {
@@ -119,9 +112,13 @@ function didWin(){
      let won = false
 
      won = allX(combination) || allO(combination)
+/* drawn function ideas here 
 
-     //console.log(won)
+     maybe add in a draw funcion here 
+     draw = allSquares(combination) where all currNode.innerText === o || === X 
+     therefore no possible move therfore draw. 
 
+*/
 
      const gameMsg = document.getElementById('gameMsg')
      if (won) {
@@ -134,3 +131,12 @@ function didWin(){
 
 }
 
+
+/* reset ideas here
+
+const resetBtn = document.getElementById('resetBtn')
+resetBtn.addEventListener("click", () =>{
+    //needs to set all nodes.innertext value back to null and set the turn count back to 0
+})
+
+*/
