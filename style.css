@@ -3,20 +3,16 @@
 }
 
 body{
+    background-color: #14bdac ;
     color: #545454;
     font-family: sans-serif;
+    margin-top: 150px
 }
 
-#container {
-    background: #14bdac;
-    margin: 50px;
-    padding: 50px;
-    border-radius: 25px;
-    width: 500px;
-    height: 500px;
-}
+
 
 #app {
+    background:;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
