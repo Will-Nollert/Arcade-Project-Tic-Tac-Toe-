@@ -39,10 +39,17 @@ body{
     padding: .5em;
 }
 
+
+
 #gameMsg {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: .5em;
 
+}
+
+#resetBtn {
+    margin-left: 47%;
+    margin-bottom: .55%;
 }
