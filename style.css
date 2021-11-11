@@ -13,7 +13,7 @@ body{
     font-family: sans-serif;
     display: flex;
     justify-content: space-between;
-    margin-left: 10%;
+    margin-left: 22%;
     margin-right: 10%;
     margin-bottom: 1%;
 }
@@ -52,6 +52,17 @@ input{
     align-items: center;
     justify-content: center;
     padding: .5em;
+}
+
+button {
+    font-family: sans-serif;
+    border: none;
+    background:#545454;
+    cursor: pointer;
+    color: white;
+    padding: .25em;
+    margin-left: 10px;
+    border-radius: 15%;
 }
 
 
