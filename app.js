@@ -9,13 +9,6 @@ app.innerHTML = board.join("")
 
 const boardSquares = Array.from(document.querySelectorAll(".square"))
 
-const player1Name = document.getElementById("playerOneName").value
-const player2Name = document.getElementById("playerTwoName").value
-
-
-
-console.log(playerOneName)
-console.log(playerTwoName)
 
 
 
@@ -49,7 +42,7 @@ boardSquares.forEach(node => {
         node.innerText = move;
         turn ++;
 
-        didWin();
+        
 
         const playerTurn = document.getElementById('playerTurn')
         playerTurn.innerText = "click a square the start the game"
@@ -64,13 +57,11 @@ boardSquares.forEach(node => {
         }
 
 
+        didWin();
+
     })
     
 });
-
-
-
-
 
 
 function didWin(){
@@ -110,7 +101,6 @@ function didWin(){
                     const currNode = combo[i];
                     if(currNode.innerText === "O" || currNode.innerText === "") {                            
                         result = false;
-                        //console.log("dislpay me if you get here")
                     }
                 }
             return result;
@@ -126,9 +116,12 @@ function didWin(){
         return true;
      }
 
-     let won = false
+     let wonX = false
+     let wonO = false
 
-     won = allX(combination) || allO(combination)
+     wonX = allX(combination) 
+     wonO = allO(combination)
+
 /* drawn function ideas here 
 
      maybe add in a draw funcion here 
@@ -136,17 +129,28 @@ function didWin(){
      therefore no possible move therfore draw. 
 
 */
+    const playerOne = document.getElementById('playerOneName').value
+    const playerTwo = document.getElementById('playerTwoName').value
+    const playerTurn = document.getElementById('playerTurn')
 
      const gameMsg = document.getElementById('gameMsg')
-     if (won) {
-         gameMsg.innerText = "You Won!"
-     }
+     if (wonX) {
+         gameMsg.textContent = "Congratulations " + playerOne + " You Won! "
+         playerTurn.textContent = null
+     } else if (wonO) {
+        gameMsg.textContent = "Congratulations " + playerTwo + " You Won! "
+        playerTurn.textContent = null
+
+    }
         });
     });
 
     
 
 }
+
+
+
 
 
 /* reset ideas here
