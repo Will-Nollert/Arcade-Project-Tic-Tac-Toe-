@@ -1,3 +1,4 @@
+
 let turn = 0
 
 const board = new Array(9).fill(null).map((val, idx) => {
@@ -8,12 +9,6 @@ const app =  document.getElementById("app")
 app.innerHTML = board.join("")
 
 const boardSquares = Array.from(document.querySelectorAll(".square"))
-
-
-
-
-
-
 boardSquares.forEach((node, idx) => {
     if (idx % 3 === 0){
         node.classList.add("column1");
@@ -115,12 +110,13 @@ function didWin(){
             }
         return true;
      }
-
      let wonX = false
      let wonO = false
 
      wonX = allX(combination) 
      wonO = allO(combination)
+
+
 
 /* drawn function ideas here 
 
@@ -137,17 +133,17 @@ function didWin(){
      if (wonX) {
          gameMsg.textContent = "Congratulations " + playerOne + " You Won! "
          playerTurn.textContent = null
-     } else if (wonO) {
+     }  else if (wonO) {
         gameMsg.textContent = "Congratulations " + playerTwo + " You Won! "
         playerTurn.textContent = null
-
-    }
+    } 
         });
     });
 
     
 
 }
+
 
 
 
