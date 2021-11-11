@@ -9,11 +9,13 @@ app.innerHTML = board.join("")
 
 const boardSquares = Array.from(document.querySelectorAll(".square"))
 
-//const player1Name = document.getElementById("player1Name").value
-//const player2Name = document.getElementById("player2Name").value
+const player1Name = document.getElementById("playerOneName").value
+const player2Name = document.getElementById("playerTwoName").value
 
 
 
+console.log(playerOneName)
+console.log(playerTwoName)
 
 
 
@@ -50,14 +52,18 @@ boardSquares.forEach(node => {
         didWin();
 
         const playerTurn = document.getElementById('playerTurn')
-        const player1Name = document.getElementById("player1Name")
-        const player2Name = document.getElementById("player2Name")
         playerTurn.innerText = "click a square the start the game"
+
+        const playerOne = document.getElementById('playerOneName').value
+        const playerTwo = document.getElementById('playerTwoName').value
+
         if(turn % 2 === 0){
-            playerTurn.innerText = "X's move"
+            playerTurn.textContent = playerOne + " it is your move"
         } else {
-            playerTurn.innerText = "Os move"
+            playerTurn.textContent = playerTwo + " it is your move"
         }
+
+
     })
     
 });
