@@ -43,8 +43,8 @@ boardSquares.forEach(node => {
         const playerTurn = document.getElementById('playerTurn')
         playerTurn.innerText = "click a square the start the game"
 
-        const playerOne = document.getElementById('playerOneName').value
-        const playerTwo = document.getElementById('playerTwoName').value
+        const playerOne = document.getElementById('playerXName').value
+        const playerTwo = document.getElementById('playerOName').value
 
         if(turn % 2 === 0){
             playerTurn.textContent = playerOne + " it is your move"
@@ -54,12 +54,13 @@ boardSquares.forEach(node => {
 
 
         didWin();
+        didDraw();
 
     })
     
 });
 
-
+//didWin function sets and validates victory conditions 
 function didWin(){
 
     const rows = [
@@ -134,8 +135,8 @@ function didWin(){
 
 //console.log(wonDraw)
 
-    const playerOne = document.getElementById('playerOneName').value
-    const playerTwo = document.getElementById('playerTwoName').value
+    const playerOne = document.getElementById('playerXName').value
+    const playerTwo = document.getElementById('playerOName').value
     const playerTurn = document.getElementById('playerTurn')
 
      const gameMsg = document.getElementById('gameMsg')
@@ -156,7 +157,24 @@ function didWin(){
 
 }
 
+//start of draw function. needs to not overlap with victory conditions. 
+function didDraw(){
+   const square1 = document.getElementById('square-1')
+   const square2 = document.getElementById('square-2')
+   const square3 = document.getElementById('square-3')
+   const square4 = document.getElementById('square-4')
+   const square5 = document.getElementById('square-5')
+   const square6 = document.getElementById('square-6')
+   const square7 = document.getElementById('square-7')
+   const square8 = document.getElementById('square-8')
+   const square9 = document.getElementById('square-9')
+    if (square1.innerText && square2.innerText && square3.innerText && square4.innerText && square5.innerText && square6.innerText && square7.innerText && square8.innerText && square9.innerText){
+        alert("this is a draw")
+    }
 
+}
+
+//Adds a reset Btn that lets players start a new game
 //not what I need but can't bundel all bSquares and set innerText to "" so hacky workaround 
 const resetBtn = document.getElementById('resetBtn')
 resetBtn.addEventListener("click", () =>{
