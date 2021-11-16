@@ -54,7 +54,6 @@ boardSquares.forEach(node => {
 
 
         didWin();
-        didDraw();
 
     })
     
@@ -112,28 +111,13 @@ function didWin(){
             }
         return true;
      } 
-// draw ideas 
-     /*const allDraw = (combo) => {
-         let result = true
-        for (let i = 0; i < combo.length; i++) {
-            const currNode = combo[i];
-            if(currNode.innerText === "X" || currNode.innerText === "O") {
-                result =  false;
-            }
-        }
-    return result;
- } 
-*/
 
      let wonX = false
      let wonO = false
-     //let wonDraw = false 
 
      wonX = allX(combination) 
      wonO = allO(combination)
-     //wonDraw = allDraw(combination)
 
-//console.log(wonDraw)
 
     const playerOne = document.getElementById('playerXName').value
     const playerTwo = document.getElementById('playerOName').value
@@ -146,13 +130,23 @@ function didWin(){
      }  else if (wonO) {
         gameMsg.textContent = "Congratulations " + playerTwo + " You Won! "
         playerTurn.textContent = null
-    } /*else if (wonDraw) {
-        gameMsg.textContent = "No Winner, its a Draw! "
-        playerTurn.textContent = null
-    }*/
+    } 
         });
     });
+    const square1 = document.getElementById('square-1')
+    const square2 = document.getElementById('square-2')
+    const square3 = document.getElementById('square-3')
+    const square4 = document.getElementById('square-4')
+    const square5 = document.getElementById('square-5')
+    const square6 = document.getElementById('square-6')
+    const square7 = document.getElementById('square-7')
+    const square8 = document.getElementById('square-8')
+    const square9 = document.getElementById('square-9')
+     if (square1.innerText && square2.innerText && square3.innerText && square4.innerText && square5.innerText && square6.innerText && square7.innerText && square8.innerText && square9.innerText){
+        gameMsg.textContent = "No Winner, This Game Is A Draw!"
+        playerTurn.textContent = null
 
+     }
     
 
 }
