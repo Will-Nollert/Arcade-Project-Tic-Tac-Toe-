@@ -1,6 +1,6 @@
 
 let turn = 0
-
+//creates new empty array with 9 empty nodes
 const board = new Array(9).fill(null).map((val, idx) => {
     return `<div class = "square" id = ${"square-" + (idx + 1 )}></div>`
 });
@@ -61,7 +61,7 @@ boardSquares.forEach(node => {
 
 //didWin function sets and validates victory conditions 
 function didWin(){
-
+    //draw mechanics here, if every square has inner text game win = draw. 
     const square1 = document.getElementById('square-1')
     const square2 = document.getElementById('square-2')
     const square3 = document.getElementById('square-3')
@@ -74,8 +74,8 @@ function didWin(){
      if (square1.innerText && square2.innerText && square3.innerText && square4.innerText && square5.innerText && square6.innerText && square7.innerText && square8.innerText && square9.innerText){
         gameMsg.textContent = "No Winner, This Game Is A Draw!"
         playerTurn.textContent = null
-
      }
+     //starts complex victory conditions here by declaring all the winning positions 
     const rows = [
         [...boardSquares.slice(0, 3)],
         [...boardSquares.slice(3, 6)],
@@ -101,7 +101,7 @@ function didWin(){
 
 
     [rows, columns, diagonals].forEach((category) => {
-
+        // checks each winning combo to see if they are populated with all of the same moves (i.e X or O)
         category.forEach((combination) => {
             
             const allX = (combo) => {
@@ -132,7 +132,7 @@ function didWin(){
      wonX = allX(combination) 
      wonO = allO(combination)
 
-
+     //sets game msg to display the game result based on logic above
     const playerOne = document.getElementById('playerXName').value
     const playerTwo = document.getElementById('playerOName').value
     const playerTurn = document.getElementById('playerTurn')
@@ -149,25 +149,11 @@ function didWin(){
     });
 }
 
-//start of draw function. needs to not overlap with victory conditions. 
-function didDraw(){
-   const square1 = document.getElementById('square-1')
-   const square2 = document.getElementById('square-2')
-   const square3 = document.getElementById('square-3')
-   const square4 = document.getElementById('square-4')
-   const square5 = document.getElementById('square-5')
-   const square6 = document.getElementById('square-6')
-   const square7 = document.getElementById('square-7')
-   const square8 = document.getElementById('square-8')
-   const square9 = document.getElementById('square-9')
-    if (square1.innerText && square2.innerText && square3.innerText && square4.innerText && square5.innerText && square6.innerText && square7.innerText && square8.innerText && square9.innerText){
-        alert("this is a draw")
-    }
 
-}
 
 //Adds a reset Btn that lets players start a new game
 //not what I need but can't bundel all bSquares and set innerText to "" so hacky workaround 
+// will prevent from keeping track of #ofWins for now
 const resetBtn = document.getElementById('resetBtn')
 resetBtn.addEventListener("click", () =>{
 location.reload();
