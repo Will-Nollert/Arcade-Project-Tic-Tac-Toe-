@@ -9,6 +9,7 @@ const app =  document.getElementById("app")
 app.innerHTML = board.join("")
 
 const boardSquares = Array.from(document.querySelectorAll(".square"))
+
 boardSquares.forEach((node, idx) => {
     if (idx % 3 === 0){
         node.classList.add("column1");
@@ -20,14 +21,14 @@ boardSquares.forEach((node, idx) => {
 })
 
 
+
+
 boardSquares.forEach(node => {
     node.addEventListener ("click", () => {
         if (node.innerText){
             return;
         }
-
         let move;
-
         if (turn % 2 === 0 ){
         move = "X"
         } else {
@@ -109,22 +110,30 @@ function didWin(){
                 }
             }
         return true;
-     }
+     } 
+// draw ideas 
+     /*const allDraw = (combo) => {
+         let result = true
+        for (let i = 0; i < combo.length; i++) {
+            const currNode = combo[i];
+            if(currNode.innerText === "X" || currNode.innerText === "O") {
+                result =  false;
+            }
+        }
+    return result;
+ } 
+*/
+
      let wonX = false
      let wonO = false
+     //let wonDraw = false 
 
      wonX = allX(combination) 
      wonO = allO(combination)
+     //wonDraw = allDraw(combination)
 
+//console.log(wonDraw)
 
-
-/* drawn function ideas here 
-
-     maybe add in a draw funcion here 
-     draw = allSquares(combination) where all currNode.innerText === o || === X 
-     therefore no possible move therfore draw. 
-
-*/
     const playerOne = document.getElementById('playerOneName').value
     const playerTwo = document.getElementById('playerTwoName').value
     const playerTurn = document.getElementById('playerTurn')
@@ -136,7 +145,10 @@ function didWin(){
      }  else if (wonO) {
         gameMsg.textContent = "Congratulations " + playerTwo + " You Won! "
         playerTurn.textContent = null
-    } 
+    } /*else if (wonDraw) {
+        gameMsg.textContent = "No Winner, its a Draw! "
+        playerTurn.textContent = null
+    }*/
         });
     });
 
@@ -145,15 +157,11 @@ function didWin(){
 }
 
 
-
-
-
-
-/* reset ideas here
-
+//not what I need but can't bundel all bSquares and set innerText to "" so hacky workaround 
 const resetBtn = document.getElementById('resetBtn')
 resetBtn.addEventListener("click", () =>{
-    //needs to set all nodes.innertext value back to null and set the turn count back to 0
+location.reload();
 })
 
-*/
+
+
