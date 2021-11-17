@@ -10,6 +10,20 @@ app.innerHTML = board.join("")
 
 const boardSquares = Array.from(document.querySelectorAll(".square"))
 
+const square1 = document.getElementById('square-1')
+const square2 = document.getElementById('square-2')
+const square3 = document.getElementById('square-3')
+const square4 = document.getElementById('square-4')
+const square5 = document.getElementById('square-5')
+const square6 = document.getElementById('square-6')
+const square7 = document.getElementById('square-7')
+const square8 = document.getElementById('square-8')
+const square9 = document.getElementById('square-9')
+const resetBtn = document.getElementById('resetBtn')
+const gameMsg = document.getElementById('gameMsg')
+
+
+
 boardSquares.forEach((node, idx) => {
     if (idx % 3 === 0){
         node.classList.add("column1");
@@ -152,11 +166,18 @@ function didWin(){
 
 
 //Adds a reset Btn that lets players start a new game
-//not what I need but can't bundel all bSquares and set innerText to "" so hacky workaround 
-// will prevent from keeping track of #ofWins for now
-const resetBtn = document.getElementById('resetBtn')
+
 resetBtn.addEventListener("click", () =>{
-location.reload();
+square1.innerText = ""
+square2.innerText = ""
+square3.innerText = ""
+square4.innerText = ""
+square5.innerText = ""
+square6.innerText = ""
+square7.innerText = ""
+square8.innerText = ""
+square9.innerText = ""
+gameMsg.innerText = ""
 })
 
 
